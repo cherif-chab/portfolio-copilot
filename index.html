@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio simple : à propos, projets, compétences et contact." />
+  <title>Portfolio - Abou Cherif</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Mon Portfolio</h1>
+
+    <nav id="navMenu" role="navigation" aria-label="Menu principal">
+      <a href="#apropos">À propos</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+
+  </header>
+
+  <main>
+    <section id="apropos">
+      <h2>À propos de moi</h2>
+      <p>
+        Je débute en développement web. J’apprends HTML, CSS 
+        et JavaScript et je crée des sites simples.
+      </p>
+    </section>
+
+    <section id="projets">
+      <h2>Projets</h2>
+
+      <div class="filters">
+        <button class="filterBtn" data-filter="all">Tous</button>
+        <button class="filterBtn" data-filter="html">HTML</button>
+        <button class="filterBtn" data-filter="css">CSS</button>
+        <button class="filterBtn" data-filter="js">JavaScript</button>
+      </div>
+
+      <article class="project" data-category="html">
+        <figure>
+          <img src="https://via.placeholder.com/400x200" class="projectImg" alt="Aperçu du projet 1 (exemple)" />
+          <figcaption>Projet 1 : Page HTML simple</figcaption>
+        </figure>
+        <p>Une page avec header, sections et footer.</p>
+      </article>
+
+      <article class="project" data-category="css">
+        <figure>
+          <img src="https://via.placeholder.com/400x200" class="projectImg" alt="Aperçu du projet 2 (exemple)" />
+          <figcaption>Projet 2 : Mise en forme CSS</figcaption>
+        </figure>
+        <p>Couleurs, marges, alignement et responsive simple.</p>
+      </article>
+
+      <article class="project" data-category="js">
+        <figure>
+          <img src="https://via.placeholder.com/400x200" class="projectImg" alt="Aperçu du projet 3 (exemple)" />
+          <figcaption>Projet 3 : Interactivité JS</figcaption>
+        </figure>
+        <p>Un bouton et un menu qui réagit au clic.</p>
+      </article>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences</h2>
+      <ul>
+        <li>HTML (structure sémantique)</li>
+        <li>CSS (mise en forme simple)</li>
+        <li>JavaScript (interactivité de base)</li>
+        <li>Git/GitHub (add, commit, push)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+
+        <form id="contactForm">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Ton nom" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="ton@email.com" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Ton message"></textarea>
+
+            <button type="submit">Envoyer</button>
+
+            <p id="formMsg" aria-live="polite"></p>
+        </form>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>© 2025 - Mon Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

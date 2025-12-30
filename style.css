@@ -1,0 +1,210 @@
+/* ===== Reset simple ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ===== Header ===== */
+header {
+  background: #222;
+  color: white;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+/* ===== Navigation ===== */
+#navMenu {
+  display: none; /* mobile: caché (JS va l’afficher en block) */
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#navMenu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #333;
+  display: inline-block;
+}
+
+#navMenu a:hover {
+  background: #444;
+}
+
+/* Bouton hamburger */
+#menuBtn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Main / sections ===== */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+section {
+  background: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* ===== Projets ===== */
+
+/* Boutons filtres */
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 12px 0;
+}
+
+.filterBtn {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #222;
+}
+
+.filterBtn:hover {
+  background: #ddd;
+}
+
+/* Cartes projets (IMPORTANT: .project pour le JS) */
+.project {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* IMPORTANT: .projectImg pour lightbox + responsive */
+.projectImg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+#projets figure {
+  margin: 0;
+}
+
+#projets figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ===== Compétences ===== */
+#competences ul {
+  padding-left: 18px;
+  margin: 10px 0;
+}
+
+#competences li {
+  margin-bottom: 8px;
+}
+
+/* ===== Formulaire ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+/* Message validation JS */
+#formMsg {
+  margin-top: 8px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #555;
+}
+
+/* ===== Responsive (à partir de 768px) ===== */
+@media (min-width: 768px) {
+  /* Menu visible sur grand écran */
+  #navMenu {
+    display: flex !important; /* force l’affichage */
+    margin-bottom: 0;
+  }
+
+  #menuBtn {
+    display: none;
+  }
+
+  /* Projets en 2 colonnes (simple) */
+  #projets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Le titre et les filtres prennent toute la largeur */
+  #projets h2,
+  #projets .filters {
+    grid-column: 1 / -1;
+  }
+
+  /* Les cartes remplissent leur colonne */
+  .project {
+    margin-top: 0;
+  }
+}
